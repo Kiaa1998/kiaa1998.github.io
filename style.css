@@ -6,34 +6,11 @@ body {
 
 h1, h2 {
  background-color: yellow;
- color: lightblue;
+ color:#7AD2ED;
  font-size: 50px;
 }
 
 ul {
-  background-color: lightblue;
-  color: red;
+  color: yellow;
   margin-left: 70px;
 }
-
-#p1 {
-    background-color: lightgreen;
-    font-style: italic;
-}
-
-.importante  {
-    background-color: green;
-    font-weight: bold;
-    color: red;
-
-}
-
-em {
-    font-style: normal;
-    font-variant: small-caps;
-
-}
-
-.importante em {
-    font-weight: 600;
- }
