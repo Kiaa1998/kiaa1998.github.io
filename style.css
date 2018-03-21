@@ -1,16 +1,18 @@
 body {
-  background-color: #7AD2ED;
-  font-family: Arial;
+  background-color: #AFEEEE;
+  font-family: 'Ubuntu', sans-serif;
   color:#333333;
 }
 
 h1, h2 {
- background-color: yellow;
- color:#7AD2ED;
+ color:#708090;
  font-size: 50px;
 }
 
+h1 {
+  background-color: 
+}
 ul {
-  color: yellow;
-  margin-left: 70px;
+  color: #333333;
+  margin-left: 50px;
 }
