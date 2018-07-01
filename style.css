@@ -2,13 +2,13 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-  background-color: #005792;
+  background-color: #2a668e;
   color: #D9FAFF;
 }
 
 h1, h2 {
   font-variant: small-caps;
-  color:#00BBF0;
+  color:#00204A;
 }
 
 a {
@@ -56,7 +56,7 @@ iframe{
 .gallery img {
   width: 240px;
   padding: 10px;
-  margin-top: 70px;
+  margin-top: 30px;
   filter: blur(100%);
 }
 
@@ -64,6 +64,11 @@ iframe{
   filter: blur(0);
   transform: scale(1.1);
 }
+
+.column.middle2 h2 {
+  margin-top: 50px;
+}
+
 /* Social Links */
 <div>
 
@@ -107,11 +112,11 @@ iframe{
     background: rgba(255, 255, 255, 0.8);
   }
   .SocialLinks ul li:hover a {
-    color: #00BBF0;
+    color: #00204A;
   }
   .SocialLinks ul li:hover i {
     color: #D9FAFF;
-    background: #00BBF0;
+    background: #00204A;
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
