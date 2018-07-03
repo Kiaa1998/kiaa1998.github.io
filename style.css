@@ -43,12 +43,6 @@ h3 {
   font-weight: normal;
 }
 
-iframe{
-  width:160%;
-  border:0;
-  overflow:hidden;
-}
-
 .gallery {
   margin: 10px 0px;
 }
@@ -57,11 +51,9 @@ iframe{
   width: 240px;
   padding: 10px;
   margin-top: 30px;
-  filter: blur(100%);
 }
 
 .gallery img:hover {
-  filter: blur(0);
   transform: scale(1.1);
 }
 
