@@ -19,6 +19,10 @@ a {
   color: #00204A;
   font-size: 18px;
 }
+li a {  color: #D9FAFF;
+  font-size: 16px;
+
+}
 p a {
   color: #D9FAFF;
   font-variant: normal;
@@ -213,5 +217,3 @@ iframe{
     	-moz-transform: translateX(0px);
     	transform: translateX(0px);
     }
-
-  

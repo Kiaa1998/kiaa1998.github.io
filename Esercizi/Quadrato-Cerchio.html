@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery.min.js"></script>
+    <style>
+      .quadrato {
+        background-color: green;
+        height: 33vh;
+        width: 33vh;
+      }
+      .center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+      }
+      .cerchio {
+        background-color: blue;
+        height: 33vh;
+        width: 33vh;
+        border-radius: 50%;
+      }
+      .fuori {
+        position: absolute;
+        left: 110%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+      }
+      .uscita {
+        animation: esci 1s linear;
+      }
+      .entrata {
+        animation: entra 1s linear;
+      }
+      .transform {
+        background-color: red;
+        height: 33vh;
+        width: 33vh;
+        animation: trasformacerchio 1s linear;
+      }
+      .spin {
+        animation: rotate 1s infinite linear;
+      }
+      .uscita2 {
+        animation: esci2 1s linear;
+      }
+
+      @keyframes esci {
+        from {left: 50%;transform: translate(-50%,-50%);}
+        to {left:110%;background-color: white;transform: translate(-50%,-50%);}
+      }
+      @keyframes entra {
+        from {left: 110%;background-color: white;}
+        to {left:50%;}
+      }
+      @keyframes trasformacerchio {
+        from {border-radius: 50%; background-color: blue}
+        to {border-radius: 0%; background-color: red}
+      }
+      @keyframes rotate {
+        from {transform: translate(-50%,-50%) rotate(0deg);}
+        to {transform: translate(-50%,-50%) rotate(360deg);}
+      }
+      @keyframes esci2 {
+        from {left: 50%;transform: translate(-50%,-50%);}
+        to {left:110%;background-color: white;transform: translate(-50%,-50%);}
+      }
+
+    </style>
+  </head>
+
+  <body>
+
+    <div id="quadrato" class="center quadrato"></div>
+    <div id="cerchio" class="fuori cerchio"></div>
+
+
+    <script>
+
+
+      function al_click(){
+        if($("#cerchio").hasClass("spin"))
+          uscire2();
+        else if($("#cerchio").hasClass("transform"))
+          ruota();
+        else if($("#cerchio").hasClass("center"))
+          transform();
+        else if($("#quadrato").hasClass("center"))
+          uscire();
+      }
+
+      function uscire(){
+        $("#quadrato").addClass("uscita");
+        $("#cerchio").addClass("entrata");
+        $("#quadrato").removeClass("center");
+        $("#quadrato").addClass("fuori");
+        $("#cerchio").removeClass("fuori");
+        $("#cerchio").addClass("center");
+      }
+
+      function transform(){
+        $("#cerchio").addClass("transform");
+        $("#cerchio").removeClass("cerchio");
+      }
+
+      function ruota() {
+        $("#cerchio").addClass("spin");
+      }
+
+      function uscire2(){
+        $("#quadrato").addClass("entrata");
+        $("#cerchio").addClass("uscita2");
+        $("#cerchio").removeClass("center");
+        $("#cerchio").addClass("fuori");
+        $("#quadrato").removeClass("fuori");
+        $("#quadrato").addClass("center");
+      }
+
+      $("#quadrato").click(al_click);
+      $("#cerchio").click(al_click);
+
+    </script>
+  </body>
+  </html>

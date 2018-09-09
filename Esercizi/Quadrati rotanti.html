@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery.min.js"></script>
+    <style>
+      .q {
+        background-color: red;
+        height: 33vh;
+        width: 33vh;
+      }
+      .q-off{
+        height: 0;
+        width: 0;
+      }
+      .q-on {
+        background-color: blue;
+        height: 16vh;
+        width: 16vh;
+      }
+      .centro {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .rot225 {
+        animation: rotation 0.5s forwards;
+      }
+      .rot-orario {
+        animation: orario 1s infinite;
+      }
+      .rot-antiorario {
+        animation: antiorario 1s infinite;
+      }
+      @keyframes rotation {
+        from {
+          transform: translate(-50%,-50%) rotate(0deg);
+        }
+        to {
+          transform: translate(-50%,-50%) rotate(-225deg);
+        }
+      }
+      @keyframes orario {
+        from {
+          transform: translate(-50%,-50%) rotate(0deg);
+        }
+        to {
+          transform: translate(-50%,-50%) rotate(360deg);
+        }
+      }
+      @keyframes antiorario {
+        from {
+          transform: translate(-50%,-50%) rotate(0deg);
+        }
+        to {
+          transform: translate(-50%,-50%) rotate(-360deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="quadrato" class="q centro"> </div>
+    <div id="quadratino" class="q-off centro"> </div>
+    <script>
+      function ruota_quadrato() {
+        $("#quadrato").addClass("rot225");
+      }
+      function appear_quadratino(){
+        $("#quadratino").addClass("q-on");
+      }
+      function ruota() {
+        $("#quadrato").addClass("rot-orario");
+        $("#quadratino").addClass("rot-antiorario");
+      }
+      function al_click() {
+        if($("#quadratino").hasClass("q-on"))
+          ruota();
+      else if($("#quadrato").hasClass("rot225"))
+          appear_quadratino();
+      else
+        ruota_quadrato();
+      }
+      $("#quadrato").click(al_click);
+    </script>
+  </body>
+  </html>

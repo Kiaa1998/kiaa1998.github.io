@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery.min.js"></script>
+    <style>
+      #box {
+        width: 300px;
+        height:300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+      #q1 {
+        background-color: red;
+      }
+      #q2 {
+        background-color: green;
+      }
+      #q3 {
+        background-color: blue;
+      }
+      #q4 {
+        background-color: yellow;
+      }
+      .quadrato{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+      }
+      .alto {
+        top: 0;
+      }
+      .basso {
+        bottom: 0;
+      }
+      .sinistra {
+        left: 0;
+      }
+      .destra {
+        right: 0;
+      }
+
+      @keyframes rotate {
+        from {transform: translate(-50%,-50%) rotate(0deg);
+        }
+        to {transform: translate(-50%,-50%) rotate(360deg);
+        }
+      }
+      .spin {
+        animation: rotate 1s infinite;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="box">
+      <div id="q1" class="quadrato alto sinistra "></div>
+      <div id="q2" class="quadrato alto destra "></div>
+      <div id="q3" class="quadrato basso sinistra "></div>
+      <div id="q4" class="quadrato basso destra "></div>
+    </div>
+
+
+    <script>
+      function al_click() {
+        if($("#q1").hasClass("destra"))
+        spin();
+        else if($("#q1").hasClass("sinistra"))
+        change();
+      }
+      function change() {
+        $("#q1").removeClass("sinistra");
+        $("#q1").addClass("destra");
+        $("#q2").removeClass("destra");
+        $("#q2").addClass("sinistra");
+      }
+
+      function spin() {
+        $("#box").addClass("spin")
+      }
+      function stop() {
+        $("#box").removeClass("spin")
+      }
+
+      $("#q1").click(al_click);
+      $("#q2").hover(stop);
+      $("#q3").hover(stop);
+      $("#q4").hover(stop);
+
+    </script>
+  </body>
+  </html>
