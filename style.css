@@ -51,7 +51,7 @@ h3 {
 }
 
 .gallery img {
-  width: 240px;
+  width: 220px;
   padding: 10px;
   margin-top: 30px;
 }
@@ -208,4 +208,3 @@ h3 {
     	-moz-transform: translateX(0px);
     	transform: translateX(0px);
     }
-    
