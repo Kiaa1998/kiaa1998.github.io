@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <script src="jquery.min.js" type="text/javascript"></script>
@@ -27,20 +28,20 @@
         border-radius: 50%;
       }
       #cornice1 {
+        transform: translate(-50%,-50%);
         width: 200px;
         height: 200px;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
       }
       #cornice2 {
+        transform: translate(-50%,-50%);
         width: 300px;
         height: 300px;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
       }
 
       @keyframes spin {
@@ -57,35 +58,46 @@
         {transform: translate(-50%,-50%) rotate(-360deg);}
       }
 
-      .spinningo {
+      .spin {
         animation: spin 6s infinite linear;
       }
 
-      .spinninga {
+      .spin2 {
         animation: spin2 4s infinite linear;
       }
     </style>
   </head>
   <body>
 
-    <div id="star"></div>
     <div id="cornice1">
       <div id="planet1"></div>
     </div>
     <div id="cornice2">
       <div id="planet2"></div>
     </div>
+    <div id="star"></div>
 
     <script>
 
-      function spinner(){
-        if($("#cornice1").hasClass("spin")){
-        $(("#cornice2").addClass("spin2"))
-        }
-        $(("#cornice1").addClass("spin"))
-      }
+      var stato=0; // dichiaro variabile
 
-      $("#star").on("click", spinner);
+      $("#star").on("click", function() {
+
+        if(stato == 0) {
+          $("#cornice1").addClass("spin");
+            stato = 1;
+        } else if(stato == 1) {
+            $("#cornice2").addClass("spin2");
+            stato = 2;
+        } else if(stato == 2) {
+            $("#cornice1").removeClass("spin");
+            $("#cornice1").addClass("spin2");
+            $("#cornice2").removeClass("spin2");
+            $("#cornice2").addClass("spin");
+            stato = 3;
+      }
+    })
 
     </script>
   </body>
+</html>
