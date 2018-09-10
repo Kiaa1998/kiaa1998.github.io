@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery.min.js" type="text/javascript"></script>
+    <style>
+    #q1 {
+      background-color: red;
+    }
+    #q2 {
+      background-color: blue;
+    }
+    #q3 {
+      background-color: green;
+    }
+    #q4 {
+      background-color: yellow;
+    }
+    .quadrato {
+      width: 100px;
+      height: 100px;
+    }
+    .top {
+      position: absolute;
+      top: 0;
+    }
+    .bottom {
+      position: absolute;
+      bottom: 0;
+    }
+    .left {
+      position: absolute;
+      left: 0;
+    }
+    .right {
+      position: absolute;
+      right: 0;
+    }
+    .center {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .oscilla {
+      animation: oscillazione 3s linear infinite;
+    }
+
+    @keyframes oscillazione {
+      from {left:50%;}
+      25% {left:25%;}
+      50% {left:50%;}
+      75% {left:75%;}
+      to {left:50%;}
+    }
+    </style>
+  </head>
+  <body>
+    <div id="q1" class="quadrato top left"> </div>
+    <div id="q2" class="quadrato top right"> </div>
+    <div id="q3" class="quadrato bottom left"> </div>
+    <div id="q4" class="quadrato bottom right"> </div>
+    <script>
+    function oscillazione() {
+      if($(this).hasClass("oscilla")){
+        $(this).removeClass("oscilla");
+        $(this).removeClass("center");
+      }
+      else if($(this).hasClass("center"))
+        $(this).addClass("oscilla");
+      else
+        $(this).addClass("center");
+    }
+      $(".quadrato").click(oscillazione);
+    </script>
+  </body>
+</html>
