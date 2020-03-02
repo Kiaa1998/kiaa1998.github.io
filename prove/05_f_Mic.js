@@ -2,6 +2,8 @@
 // PART 1f: Mic //
 
 var mic;
+var mii;
+var songButton;
 
 function preload() {
   mii = loadSound("./mii.mp3");
@@ -20,6 +22,10 @@ function playMusic(){
 
 function draw() {
   background(200);
+
+  songButton = createButton("need some music?");
+  songButton.position(100, 100);
+  songButton.mouseClicked(playMusic);
 
   fill(255,0,0);
   noStroke();
