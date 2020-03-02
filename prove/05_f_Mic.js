@@ -4,6 +4,7 @@
 var mic;
 
 function preload() {
+  mii = loadSound("./mii.mp3");
 }
 
 function setup() {
@@ -11,6 +12,10 @@ function setup() {
   mic = new p5.AudioIn(); // create an Audio input line
   mic.start(); // starts the audio input --> requests access to mic √
 
+}
+
+function playMusic(){
+  mii.play();
 }
 
 function draw() {
