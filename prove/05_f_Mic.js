@@ -2,37 +2,37 @@
 // PART 1f: Mic //
 
 var mic;
-var mii;
+// var mii;
 var songButton;
 
 function preload() {
-  mii = loadSound("./assets/mii.mp3");
+  // mii = loadSound("./assets/mii.mp3");
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   mic = new p5.AudioIn(); // create an Audio input line
-  mic.start(); // starts the audio input --> requests access to mic √
+  // mic.start(); // starts the audio input --> requests access to mic √
 
 }
 
-function playMusic(){
-  mii.play();
+function startMic(){
+  mic.start(); // starts the audio input --> requests access to mic √
 }
 
 function draw() {
   background(200);
 
-  songButton = createButton("need some music?");
+  songButton = createButton("Start Mic");
   songButton.position(100, 100);
-  songButton.mouseClicked(playMusic);
+  songButton.mouseClicked(startMic);
 
   fill(255,0,0);
   noStroke();
-  ellipse(250,250,volume*200);
+  ellipse(250,250,volume * 200);
 
   var volume = mic.getLevel(); // this should get microphone input level as a value between 0 and 1
-  console.log(volume);
+  console.log(volume);  // VOLUME START WORKING SEEMINGLY ONLY ONCE YOU START AN AUDIO TRACK?
 
 }
 
