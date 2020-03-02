@@ -7,7 +7,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(500,500);
+  createCanvas(windowWidth, windowHeight);
   mic = new p5.AudioIn(); // create an Audio input line
   mic.start(); // starts the audio input --> requests access to mic √
 
