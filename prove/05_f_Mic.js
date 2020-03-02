@@ -1,7 +1,7 @@
 // INTERACTION & INTERFACES //
 // PART 1f: Mic //
 
-let mic;
+var mic;
 
 function preload() {
 }
@@ -18,7 +18,7 @@ function draw() {
 
   fill(255,0,0);
   noStroke();
-  ellipse(250,250,volume+200);
+  ellipse(250,250,200);
 
   var volume = mic.getLevel(); // this should get microphone input level as a value between 0 and 1
   console.log(volume);
