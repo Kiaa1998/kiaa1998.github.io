@@ -17,6 +17,7 @@ function draw() {
   background(200);
 
   if(keyIsDown(UP_ARROW)){
+    mic.resume();
     var vol = mic.getLevel(); // this should get microphone input level as a value between 0 and 1
     console.log(vol)
   }
