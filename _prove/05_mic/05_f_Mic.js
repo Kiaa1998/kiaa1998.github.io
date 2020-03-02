@@ -9,14 +9,17 @@ function preload() {
 function setup() {
   createCanvas(500,500);
   mic = new p5.AudioIn(); // create an Audio input line
-  mic.start(); // starts the audio input
+  mic.start(); // starts the audio input --> requests access to mic √
+
 }
 
 function draw() {
   background(200);
 
-  var vol = mic.getLevel(); // this should get microphone input level as a value between 0 and 1
-  console.log(vol)
+  if(keyIsDown(UP_ARROW)){
+    var vol = mic.getLevel(); // this should get microphone input level as a value between 0 and 1
+    console.log(vol)
+  }
 
   fill(255,0,0);
   noStroke();
@@ -26,3 +29,6 @@ function draw() {
 // Input always returns = 0
 // THERE'S AN ISSUE WITH THE LIBRARY MOST LIKELY
 // THEORETICALLY THE CODE WORKS
+
+// 02/03 Test 3.0
+// Set an interaction ahead of starting mic --> interact/start mic/draw
