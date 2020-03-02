@@ -6,7 +6,7 @@ var mii;
 var songButton;
 
 function preload() {
-  mii = loadSound("./mii.mp3");
+  mii = loadSound("./assets/mii.mp3");
 }
 
 function setup() {
