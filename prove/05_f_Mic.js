@@ -16,15 +16,13 @@ function setup() {
 function draw() {
   background(200);
 
-  if(keyIsDown(UP_ARROW)){
-    mic.resume();
-    var volume = mic.getLevel(); // this should get microphone input level as a value between 0 and 1
-    console.log(volume)
-  }
-
   fill(255,0,0);
   noStroke();
   ellipse(250,250,volume * 200);
+
+  var volume = mic.getLevel(); // this should get microphone input level as a value between 0 and 1
+  console.log(volume);
+
 }
 
 // Input always returns = 0
