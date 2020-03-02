@@ -2,20 +2,19 @@
 // PART 1f: Mic //
 
 var mic;
-// var mii;
-// var songButton;
 
 function preload() {
-  // mii = loadSound("./assets/mii.mp3");
 }
 
 function setup() {
   let cnv = createCanvas(windowWidth, windowHeight);
-  cnv.mousePressed(userStartAudio);
   mic = new p5.AudioIn(); // create an Audio input line
   mic.start(); // starts the audio input --> requests access to mic √
-
 }
+
+function touchStarted() {
+  getAudioContext().resume();
+} 
 
 // function startMic(){
 //   mic.start(); // starts the audio input --> requests access to mic √
