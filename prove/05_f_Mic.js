@@ -22,7 +22,7 @@ function setup() {
 // }
 //
 function draw() {
-  background(200);
+  background(0);
 
   // songButton = createButton("Start Mic");
   // songButton.position(100, 100);
